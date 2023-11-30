@@ -4,8 +4,10 @@ import  { customMargin } from "../Components/SlideBar";
 import SvgCart from "../Imagenes/Icons/SvgCart";
 import Navbar from "../Components/Navbar";
 import SlideBar from "../Components/SlideBar";
+import ArrayBlackOut from "../Components/ArrayBlackOut";
 const Home = () => { 
     return(
+      <ArrayBlackOut>
     <div className="container-fluid">
       <Navbar />
       <div className="row">
@@ -110,6 +112,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    </ArrayBlackOut>
     );
  };
  export default Home;   

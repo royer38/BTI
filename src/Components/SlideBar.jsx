@@ -1,16 +1,17 @@
+import React, { useContext } from "react";
+import { ArrayContext } from "./ArrayBlackOut";
 export const customMargin= {
   marginTop: '70px'
       };
-      
-const SlideBar = () => {
-    
+      const SlideBar = () => {
+        const total = useContext(ArrayContext);
     return(
         <div className="sidebar" style={customMargin}>            
         <h6>CATEGORÍAS</h6>
         <ul/>
         <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
         <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Black Out (37)
+        ‎ Black Out ({total})
         </label>
         <ul></ul>
         <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
