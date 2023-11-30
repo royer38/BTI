@@ -36,7 +36,7 @@ function Navbar() {
               <Link
                 className="nav-link active fw-bold"
                 aria-current="page"
-                to="/Home"
+                to="/"
               >
                 Home
               </Link>

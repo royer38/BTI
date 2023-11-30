@@ -100,7 +100,7 @@ las entregas son mediante J&T Delivery y las devoluciones son gestionadas con la
   </div>
 </div>
 <p className="card-text text-center"><small className="text-body-secondary">$450.00 precio por m²</small></p>
-      <Link to="/envio">D_envio</Link >
+      <Link type="button" className="btn btn-outline-primary" to="/envio">Agregar direccion de envio</Link >
       </div>
     </div>
   </div>

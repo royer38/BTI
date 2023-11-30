@@ -1,10 +1,14 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+
+
 
 const Centrado= {
   marginLeft:'25%',
   marginRight: '25%',
 };
 const D_envio = () => {
+
+
   return(
 <form className="row g-3" style={Centrado}>
   <h1>Agrega una direccion</h1>
@@ -85,7 +89,7 @@ const D_envio = () => {
     </div>
   </div>
   <div className="col-12">
-    <a className="btn btn-primary" type="submit" href="/Pago">Agregar metodo de pago</a>
+    <a type="button" className="btn btn-outline-primary" href="/Pago"> Agregar metodo de pago</a>
   </div>
 </form>
     );

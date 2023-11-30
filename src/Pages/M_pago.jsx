@@ -1,6 +1,17 @@
-import { Outlet } from "react-router-dom";
+const B_centrado ={
+  marginLeft: '20px',
+}
+const M_pago = () => {
+const handleClickPagado = () => {
+Swal.fire({
+  title: '¡Pago realizado!',
+  text: 'El pago se realizo con exito',
+  icon: 'success',
+  confirmButtonText: 'cerrar',
+});
+};
 
-const M_pago = () => { 
+
     return (
         <>
 <div>
@@ -126,6 +137,7 @@ const M_pago = () => {
     </div>
   </div>
   {/* partial */}
+  <button type="button" className="btn btn-outline-success mt-1" style={B_centrado} onClick={handleClickPagado}>Pagar</button>
 </div>
         </>
     );
