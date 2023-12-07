@@ -1,0 +1,39 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-opacity: 100%;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  transition: left 0.3s ease-in-out;
+  overflow-y: auto; /* Agregar barra de desplazamiento vertical */
+}
+/* Ocultar la barra de desplazamiento */
+.sidebar::-webkit-scrollbar {
+  width: 0px; /* Ancho 0 para que no sea visible */
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.menu-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.menu-items li {
+  padding: 10px;
+}
+
+.menu-items li:last-child {
+  border-bottom: none;
+}

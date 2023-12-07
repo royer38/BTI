@@ -4,7 +4,6 @@ import { customMargin } from "../Components/SlideBar";
 import { Link } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import SlideBar from "../Components/SlideBar";
-import D_envio from "./D_envio";
 
 const SingleProduct = () => { 
 
@@ -106,13 +105,9 @@ las entregas son mediante J&T Delivery y las devoluciones son gestionadas con la
   </div>
 </div>
 </div>
-          
         </div>
       </div>
     </div>
-
-
-
     );
  };
  export default SingleProduct;

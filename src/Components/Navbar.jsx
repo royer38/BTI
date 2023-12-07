@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
-function Navbar() {
+function Navbar({toggleMenu}) {
 
     const [ShowCarrito, Setshow] = useState(false);
   
@@ -14,7 +14,7 @@ function Navbar() {
       };
 
   return (
-    <nav className="navbar rd-navbar-nav-wrap navbar-expand-lg bg-body-tertiary fixed-top">
+    <nav className="navbar rd-navbar-nav-wrap nav-underline navbar-expand-lg bg-body-tertiary fixed-top">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           Navbar
@@ -34,7 +34,7 @@ function Navbar() {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link
-                className="nav-link active fw-bold"
+                className="nav-link fw-bold"
                 aria-current="page"
                 to="/"
               >
@@ -61,9 +61,9 @@ function Navbar() {
               <ul className={`dropdown-menu ${ShowCarrito ? 'show' : ''}`} onMouseEnter={handleCarritoShow}
               onMouseLeave={handleCarritofalse}>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <NavLink className="dropdown-item" to="/Carrito">
                     ver carrito
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
                   <a className="dropdown-item" href="#">
@@ -74,7 +74,7 @@ function Navbar() {
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href="/Pago">
                     pagar ahora
                   </a>
                 </li>
@@ -86,6 +86,9 @@ function Navbar() {
               </a>
             </li>
           </ul>
+            <button onClick={toggleMenu}>barraL</button>
+
+            
           <form className="d-flex" role="search">
             <input
               className="form-control me-2"

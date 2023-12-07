@@ -1,125 +1,243 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ArrayContext } from "./ArrayBlackOut";
-export const customMargin= {
-  marginTop: '70px'
-      };
-      const SlideBar = () => {
-        const total = useContext(ArrayContext);
-    return(
-        <div className="sidebar" style={customMargin}>            
-        <h6>CATEGORÍAS</h6>
-        <ul/>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Black Out ({total})
+import "../css/prueba.css";
+export const customMargin = {
+  marginTop: "10px",
+};
+const SlideBar = ({setIsChecked }) => {
+  const total = useContext(ArrayContext);
+  const [isChecked, setIsCheckedLocally] = useState(false);
+
+  const handleCheckBoxChange = () => {
+    setIsCheckedLocally(!isChecked);
+    setIsChecked(!isChecked);
+  };
+const [isOpen, setIsOpen] = useState(true);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+  return (
+    <div className={`sidebar ${isOpen ? "open" : ""}`} style={customMargin}>
+    <button className="menu-toggle" onClick={toggleMenu}>
+      <i className="fas fa-bars"></i>
+    </button>
+    <ul className="menu-items">
+      <li>CATEGORÍAS</li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="BOCheck"
+          checked={isChecked}
+          onChange={handleCheckBoxChange}
+        />
+        <label className="form-check-label" htmlFor="BOCheck">
+          ‎ Black Out ({total})
         </label>
-        <ul></ul>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+      </li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault"
+        />
         <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Duo (212)       
+          ‎ Duo (212)
         </label>
-        <ul></ul>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Skirts (11)        
+      </li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault1"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault1">
+          ‎ Skirts (11)
         </label>
-        <ul></ul>
-        <ul/>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Coats (75)
+      </li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault2"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault2">
+          ‎ Coats (75)
         </label>
-        <ul></ul> 
-        <ul></ul>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Tops (15)        
+      </li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault3"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault3">
+          ‎ Tops (15)
         </label>
-        <ul></ul>
-        <ul></ul>
-        <h6>MARCAS</h6>
-        <ul/>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ A.P.C. (37)
+      </li>
+
+      <li>MARCAS</li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault10"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault10">
+          ‎ A.P.C. (37)
         </label>
-        <ul></ul>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Armani (211)        
+      </li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault11"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault11">
+          ‎ Armani (211)
         </label>
-        <ul></ul>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Loro Piana (15)        
+      </li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault12"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault12">
+          ‎ Loro Piana (15)
         </label>
-        <ul></ul>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Topiro (12)        
+      </li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault13"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault13">
+          ‎ Topiro (12)
         </label>
-        <ul></ul>
-        <h6>COLORES</h6>
-        <ul/>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Azul
+      </li>
+      
+
+      <li>COLORES</li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault20"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault20">
+          ‎ Azul
         </label>
-        <ul></ul>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Verde       
+      </li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault21"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault21">
+          ‎ Verde
         </label>
-        <ul></ul>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Blanco        
+      </li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault22"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault22">
+          ‎ Blanco
         </label>
-        <ul></ul>
-        <ul/>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Gris
+      </li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault23"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault23">
+          ‎ Gris
         </label>
-        <ul></ul> 
-        <ul></ul>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Extra Grande        
+      </li>
+
+
+      <li>TAMAÑOS</li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault30"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault30">
+          ‎ Extra pequeño
         </label>
-        <ul></ul>
-        <ul></ul>
-        <h6>TAMAÑOS</h6>
-        <ul/>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Extra pequeño
+      </li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault31"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault31">
+          ‎  Pequeño
         </label>
-        <ul></ul>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ pequeño       
+      </li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault32"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault32">
+          ‎ Mediano
         </label>
-        <ul></ul>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Mediano        
+      </li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault33"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault33">
+          ‎ Grande
         </label>
-        <ul></ul>
-        <ul/>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Grande
+      </li>
+      <li>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault34"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault34">
+          ‎ Extra Grande
         </label>
-        <ul></ul> 
-        <ul></ul>
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-        ‎ Extra Grande        
-        </label>
-        <ul></ul>
-        <ul></ul>
-      </div>
-    );
- };
- export default SlideBar;
+      </li>
+
+    </ul>
+    <button className="menu-toggle" onClick={toggleMenu}>
+        <i className="fas fa-bars"></i> cerrar
+      </button>
+  </div>
+  );
+};
+export default SlideBar;
