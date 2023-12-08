@@ -12,9 +12,9 @@ function Navbar({toggleMenu}) {
       const handleCarritofalse = () => {
         Setshow(false);
       };
-
+      // bg-body-opacity-50 para que sea transparente
   return (
-    <nav className="navbar rd-navbar-nav-wrap nav-underline navbar-expand-lg bg-body-tertiary fixed-top">
+    <nav className="navbar rd-navbar-nav-wrap nav-underline navbar-expand-lg fixed-top bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           Navbar
@@ -85,10 +85,7 @@ function Navbar({toggleMenu}) {
                 Disabled
               </a>
             </li>
-          </ul>
-            <button onClick={toggleMenu}>barraL</button>
-
-            
+          </ul>    
           <form className="d-flex" role="search">
             <input
               className="form-control me-2"

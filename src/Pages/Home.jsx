@@ -4,7 +4,7 @@ import SvgCart from "../Imagenes/Icons/SvgCart";
 import Navbar from "../Components/Navbar";
 import SlideBar from "../Components/SlideBar";
 import ArrayBlackOut from "../Components/ArrayBlackOut";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 const customMargin1 = {
   marginTop: "40px",
 };
@@ -15,15 +15,26 @@ const Home = () => {
   const toggleMenu = () => {
     setIsOpen(!isopen);
   };
+
+//prueba de la bd
+const [users, setUsers] = useState([]);
+useEffect(() => {
+  fetch('http://localhost/Index.php')
+  .then((response) => response.json())
+  .then((data) => setUsers(data))
+  .catch((error) => console.error('Error fetching data:', error));
+}, []);
+
+
   return (
     <ArrayBlackOut>
       <div className="container-fluid">
         <Navbar toggleMenu={toggleMenu} />
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-2">
             <SlideBar isOpen={isopen} setIsChecked={setIsChecked} />
           </div>
-          <div className="col-md-9">
+          <div className="col-md-10">
             {/**cuerpo de la pagina */}
             <div
               className="row row-cols-1 row-cols-md-3 g-4"
@@ -198,6 +209,16 @@ const Home = () => {
               </div>
             </div>
             <ChangePage />
+            <div>
+      {/* Aquí puedes mostrar los datos de los usuarios */}
+      {users.map((user) => (
+        <div key={user.id}>
+          <p>{user.name}</p>
+          <p>{user.email}</p>
+          {/* ...otros campos */}
+        </div>
+      ))}
+    </div>
           </div>
         </div>
       </div>

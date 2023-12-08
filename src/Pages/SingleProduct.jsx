@@ -12,19 +12,19 @@ const SingleProduct = () => {
   }, []);
 
     return (
-      <div className="container-fluid">
+      <div className="container-fluid" >
       <Navbar />
       <div className="row">
         <div className="col-md-3">
           <SlideBar />
         </div>
-        <div className="col-md-9">          
+        <div className="col-md-9 d-flex aling-items-center" style={customMargin}>          
           {/**cuerpo de la pagina */}
-        <div style={customMargin}>
-<div className="card mb-3 border-light" style={{maxWidth: 'flex'}} >
+        <div >
+<div className="card mb-3 border-white" style={{maxWidth: 'flex'}} >
   <div className="row g-0">
     <div className="col-md-4">
-      <img src="src\Imagenes\Persiana-Duo.jpeg" className="img-fluid rounded-start" alt="Duo" />
+      <img src="src\Imagenes\Persiana-Duo.jpeg" className="img-fluid rounded-start mt-5" alt="Duo" />
     </div>
     <div className="col-md-8">
       <div className="card-body">
@@ -51,9 +51,7 @@ const SingleProduct = () => {
     </h2>
     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div className="accordion-body">
-        <p>presentacion por metro cuadrado</p>
-        <p>las medidas que el cliente necesite</p>
-        <p>color negro y transparente</p>
+        <p>presentacion por metro cuadrado, las medidas que el cliente necesite, color negro y transparente</p>
       </div>
     </div>
   </div>

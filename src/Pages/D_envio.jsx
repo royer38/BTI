@@ -1,7 +1,4 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-
-
-
 const Centrado= {
   marginLeft:'25%',
   marginRight: '25%',
